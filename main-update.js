@@ -12,6 +12,7 @@ i = document.createElement("h3");
 i.innerText = "What's new with your friend? Check something below!"
 
 setInterval(() => {
+
     fetch("http://dimmoy")
     .then((data) => data.json())
     .then(datas => { 
