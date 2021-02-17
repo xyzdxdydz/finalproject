@@ -12,7 +12,7 @@ i = document.createElement("h3");
 i.innerText = "What's new with your friend? Check something below!"
 
 setInterval(() => {
-    fetch("http://158.108.182.0:20010/app/admin/exceed_group10/g10/602ceb00df6a3e7117266daf")
+    fetch("http://dimmoy")
     .then((data) => data.json())
     .then(datas => { 
         datas.forEach(d => {
