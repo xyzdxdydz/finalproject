@@ -1,20 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100&display=swap');
 
-* {
-    font-family: 'Prompt', sans-serif;
+@font-face {
+    font-family: PromptHeader;
+    src: url('https://fonts.googleapis.com/css2?family=Prompt:wght@600&display=swap');
 }
 
 body {
+    font-family: 'Prompt', sans-serif;
+    color: white;
     margin: 0;
     padding: 0;
-    background: rgba(235, 235, 235, 0.356);
+    min-height: 720px;
+    background: linear-gradient(to bottom right, rgb(50, 40, 77), rgb(14, 13, 27));
 }
 
 /*  =============================================
     Scroll bar
     ============================================  */
 ::-webkit-scrollbar {
-    width: 15px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -23,12 +27,12 @@ body {
   }
    
 ::-webkit-scrollbar-thumb {
-    background: rgb(144, 68, 177); 
+    background: violet; 
     border-radius: 10px;
 }
   
 ::-webkit-scrollbar-thumb:hover {
-    background: #6d3175; 
+    background: mediumorchid; 
 }
 
 ::-webkit-scrollbar-corner {
@@ -36,43 +40,87 @@ body {
 }
 
 /*  =============================================
-    Top column
+    Top navigation section
     ============================================  */
-.top {
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 999;
     width: 100%;
     height: 50px;
     margin-bottom: 20px;
-    background: linear-gradient(45deg, #79df7e 0%, #55d08e 60%, #188a8d 100%);
+    background: linear-gradient(45deg, rgb(255, 98, 152) 10%, rgb(130, 81, 225) 90%);
+    box-shadow: 4px 4px 16px #1d1d1d; 
+  }
+
+li {
+    float: left;
+    display: inline;
 }
 
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: rgb(124, 26, 70);
+}
+
+.material-icons.md-60 { 
+    font-size: 250%;
+    margin-top: 5px;
+    margin-right: 5px;
+    animation: circumstance 3s infinite linear;
+}
+
+/*  =============================================
+    Info-Display section
+    ============================================  */
 .row {
     margin-left: 12.5%;
     margin-right: 12.5%;
     display: flex;
 }
 
-/*  =============================================
-    Info-Display section
-    ============================================  */
-
 .info-column {
     flex: 40%;
+    margin-top: 70px;
 }
 
 .name {
-    font-weight: 500;
+    background: -webkit-linear-gradient(135deg, rgb(229, 100, 255), rgb(255, 153, 135));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+    padding: 0.5% 0;
+    font-family: 'PromptHeader', sans-serif;
     font-size: 225%;
-    line-height: 0.5;
+    line-height: 100%;
+    animation: hue-shift 8s infinite
+    alternate;
 }
 
 .slogan {
-    line-height: 0.5;
+    line-height: 100%;
+    /* text-align: center; */
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ffffff;
 }
 
 .kumkom {
+    color: white;
     margin-top: 50px;
     margin-bottom: 40px;
-    line-height: 0.5;
+    font-size: 80%;
+    line-height: 100%;
 }
 
 .row-buttom {
@@ -82,62 +130,117 @@ body {
 .recommend {
     display: flex;
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     margin: 0;
     padding: 0;
     border: 2px solid black;
 }  
 
 .pic-sec {
-    text-align: center;    
+    text-align: center;
+    font-size: 90%;
 }
 
 .desc {
-    position: relative;
-    line-height: 0.5;
+    word-wrap: break-word;
+    line-height: 140%;
     margin-left: 40px;
     padding: 0;
+    color: #cad3ff;
 }
 
 /*  =============================================
     Water Dispenser status section
     ============================================  */
+
+.status-Arcticle {
+    margin: 3% 7%;
+    font-style: bold;
+}
+
 .status-column {
     flex: 60%;
     margin-left: 5%;
     margin-top: 2%;
+    margin-top: 100px;
+    min-height: 500px;
+
 }
 
 .hourly-update {
-    margin: 0 auto; 
+    display: flex;
+    margin: 10px auto;
     width: 90%;
-    height: 40%;
+    min-height: 40%;
     border-radius: 20px;
-    background-color: rgb(53, 243, 62);
+    color: black;
+    background-color: rgb(243, 243, 243);
+
+}
+
+.minitab {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 90%;
+    height: 50px;
+    border-radius: 10px;
+    background: rgb(82, 68, 204);
+}
+
+.minitab:hover {
+    background-color: aqua;
 }
 
 .status-column-row2 {
     display: flex;
     margin: 0 auto;
     width: 90%;
-    height: auto;
-
+    min-height: 200px;
 }
 
 .daily-update {
     flex: 40%;
     width: 35%;
-    height: 40%;
+    min-height: 40%;
     margin-right: 1.5%;
-    border-radius: 1%;
-    background-color: rgb(95, 255, 80);
+    border-radius: 10px;
+    background: linear-gradient(45deg, #5b4fff 10%, rgb(130, 81, 225) 90%);
 }
 
 .weekly-update {
     flex: 40%;
     margin-left: 1.55%;
     width: 35%;
-    height: 40%;
-    background-color: aquamarine;
+    min-height: 40%;
+    border-radius: 10px;
+    background: linear-gradient(45deg, rgb(130, 81, 225) 10%, rgb(178, 63, 255) 90%);
+}
+
+.end {
+    margin-top: 50px;
+    height: 300px;
+    background-color: #4e0e8a;
+}
+
+/*  =============================================
+    KeyFrames animation section
+    ============================================  */
+
+@keyframes hue-shift {
+    from {
+        filter: hue-rotate(0);
+    
+    } to {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes circumstance {
+    from {
+        transform: rotate(0deg);
+    
+    } to {
+        transform: rotate(360deg);
+    }
 }

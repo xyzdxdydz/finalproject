@@ -33,6 +33,4 @@ setInterval(() => {
         headers: {"Content-Type": "application/json"},
 
     })
-    .then((data) => data.json())
-    .then(data => console.log("weekPopular = "+data.result));
 }, 5000);
