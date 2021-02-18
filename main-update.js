@@ -18,7 +18,7 @@ setInterval(() => {
 
     })
     .then((data) => data.json())
-    .then(data => console.log("hoursPopular = "+data.result));
+    .then(data => console.log("hoursPopular = "+ data.result));
 
     fetch("http://158.108.182.12:3000/popular?Type=dayPopular", {
         method:"GET",
@@ -26,11 +26,12 @@ setInterval(() => {
 
     })
     .then((data) => data.json())
-    .then(data => console.log("dayPopular = "+data.result));
+    .then(data => console.log("dayPopular = "+ data.result));
 
     fetch("http://158.108.182.12:3000/popular?Type=weekPopular", {
         method:"GET",
         headers: {"Content-Type": "application/json"},
-
     })
+    .then((data) => data.json())
+    .then(data => console.log("dayPopular = "+ data.result));
 }, 5000);
