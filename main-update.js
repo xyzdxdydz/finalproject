@@ -12,14 +12,26 @@ i = document.createElement("h3");
 i.innerText = "What's new with your friend? Check something below!"
 
 setInterval(() => {
+    fetch("http://158.108.182.12:3000/popular?Type=hoursPopular", {
+        method:"GET",
+        headers: {"Content-Type": "application/json"},
 
-    fetch("http://158.108.182.0:20010/app/admin/exceed_group10/g10/602ceb00df6a3e7117266daf")
+    })
     .then((data) => data.json())
-    .then(datas => { 
-        datas.forEach(d => {
-            app.appendChild(makeNewNode(d.Slot));
-            app.appendChild(makeContent(d.Volume));
-            app.appendChild(makeNewNode(d.Is_on));
-        });
-    });
+    .then(data => console.log("hoursPopular = "+ data.result));
+
+    fetch("http://158.108.182.12:3000/popular?Type=dayPopular", {
+        method:"GET",
+        headers: {"Content-Type": "application/json"},
+
+    })
+    .then((data) => data.json())
+    .then(data => console.log("dayPopular = "+ data.result));
+
+    fetch("http://158.108.182.12:3000/popular?Type=weekPopular", {
+        method:"GET",
+        headers: {"Content-Type": "application/json"},
+    })
+    .then((data) => data.json())
+    .then(data => console.log("dayPopular = "+ data.result));
 }, 5000);
