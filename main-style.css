@@ -225,7 +225,8 @@ li a:hover {
 }
 
 .hourly-update {
-    display: flex;
+    display: block;
+    text-align: center;
     margin: 10px auto;
     width: 90%;
     min-height: 40%;
@@ -234,6 +235,7 @@ li a:hover {
     background-color: white;
 
 }
+
 
 .minitab {
     margin: 0 auto;
@@ -277,6 +279,53 @@ li a:hover {
     margin-top: 50px;
     height: 300px;
     background-color: #4e0e8a;
+}
+.water1{
+    width: 300px;
+    height: 300px;
+    background-position: left;
+
+
+}
+.water2{
+    width: 300px;
+    height: 300px;
+    background-position: right;
+
+
+}
+
+.water{
+    text-align: center;
+    margin: 3% 7%;
+    font-style: bold;
+}
+.img-center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    height: 150px;
+
+
+
+
+}
+
+
+
+
+
+
+.row1 {
+  display: flex;
+}
+
+
+.column1 {
+    width: 100%;
+
+  padding: 5px;
 }
 
 /*  =============================================
