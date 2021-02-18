@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Welcome: KU Smart Water</title>
     <link rel="stylesheet" href="main-style.css">
+    <link rel="shortcut icon" href="main-pic/shortcut-icon-main.svg"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 
@@ -29,7 +30,9 @@
                 <li><a href="https://ddc.moph.go.th/viralpneumonia/index.php">กรมควบคุมโรค</a></li>
                 <li><a href="contact.asp">ช่องทางติดต่อ</a></li>
                 <li><a href="about.asp">เกี่ยวกับ</a></li>
-                <li style="float:right"><i id="ic" class="material-icons md-60">refresh</i></li>
+
+                <li style="float:right" id="setting"><a><i class="material-icons md-48">settings</i></a></li>
+                <li style="float:right" id="status"><i class="material-icons md-60" id="setting-icon">refresh</i></li>
               </ul>
         </div>
     
@@ -51,12 +54,13 @@
                 
                 <div class="row-buttom">
                     <div class="pic-sec">
-                        <img class="recommend" src="main-pic/8858998581498_e14-04-2020.webp" alt=""/>
+                        <img class="recommend" id="recpic" src="main-pic/water-slot1.webp" alt=""/>
+                        <script src="randomize-pic.js" href></script>
                         <h3>ถ้านึกไม่ออก ลองนี่ !</h3>
                     </div>
                     <div class="desc">
                         <h4>พวกเราตระหนักถึงปัญหาเชื้อไวรัส COVID-19 ที่กำลังระบาดอยู่ ณ ขณะนี้ เราจึงขอร่วมเป็นส่วนหนึ่งในการป้องกันเชื้อโรค ขอความร่วมมือทุกท่านลดการสัมผัส ล้างมือบ่อย ๆ และสวมหน้ากากอนามัยตลอดเวลา </h4>
-                        <h4>ด้วยความปราถนาดี - Group 10</h4>
+                        <h4 id="last-line">ด้วยความปราถนาดี - Group 10</h4>
                     </div>
                 </div>
     
@@ -82,8 +86,59 @@
             </div>
         </div>
         <script src="main-update.js" href></script>
-    </div> 
-    
+    </div>
+
+    <div class="modal" id="modal"> 
+        <div  class="modal-content" id="modal-content">
+            <span class="close">&times;</span>
+
+            <div class="modal-row">
+                <div class="modal1">
+                    <h2>Slot 1</h2>
+                    <div class="slot-name" id="slot1-name">
+                        <h3>Name: <h3>
+                    </div>
+
+                    <div class="slot-pic" id="slot1-pic">
+                        <img src="main-pic/water-slot1.webp" alt=""/>
+                    </div>
+                    <div class="slot-gauge" id="slot1-gauge">
+
+                    </div>
+
+                    <div class="slot-upload" id="slot1-upload">
+                        <input class="btn" id="btn2" type="submit" value="Upload">
+                    </div>
+                </div>
+                <div class="modal2">
+                    <h2>Slot 2</h2>
+                    <div class="slot-name" id="slot2-name">
+                        <h3>Name: <h3>
+                    </div>
+
+                    <div class="slot-pic" id="slot2-pic">
+                        <img src="main-pic/water-slot2.jpg" alt=""/>
+
+                    </div>
+                    <div class="slot-gauge" id="slot2-gauge">
+
+                    </div>
+
+                    <div class="slot-upload" id="slot2-upload">
+                        <form action="main.html">
+                            <label for="img">Select image:</label>
+                            <input type="file" id="img" name="img" accept="image/*">
+                            <input type="submit">
+                          </form>
+                        <input class="btn" id="btn1" type="submit" value="Upload">
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+        <script src="setting-onClick.js" href></script>
+    </div>
 </body>
 <footer>
     <!-- <div class="end"></div> -->
