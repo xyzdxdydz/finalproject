@@ -7,7 +7,7 @@
 
 @font-face {
     font-family: PromptNavbar;
-    src:url('https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap');
+    src:url('https://fonts.googleapis.com/css2?family=Prompt:wght@200;300&display=swap');
 }
 
 body {
@@ -49,10 +49,11 @@ body {
     Intro-Animation
     ============================================  */
 #anim-key2 {
-    display: none;
+    display: initial;
 }
 
 .anim-key1 {
+    display: none;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -65,11 +66,13 @@ body {
 }
 
 .content {
+    display: none;
     position: relative;
     padding: 100px 40px;
 }
 
 .content .name-intro {
+    display: none;
     background: -webkit-linear-gradient(0deg, #ffffff, #ffffff, rgb(229, 100, 255), rgb(255, 153, 135));
     background-size: 400% 400%;
     -webkit-background-clip: text;
@@ -198,6 +201,11 @@ li a:hover {
     color: #cad3ff;
 }
 
+.recommend-message {
+    border: 1px solid white;
+    padding: 5px;
+}
+
 #last-line {
     margin-top: 8%;
 }
@@ -208,20 +216,81 @@ li a:hover {
 }
 
 /*  =============================================
-    Water Dispenser status section
+    Water Dispenser hourly status section
     ============================================  */
-
 .status-Arcticle {
-    margin: 3% 7%;
+    margin: 2% 2%;
     font-style: bold;
 }
 
 .status-column {
-    flex: 60%;
+    flex: 40%;
     margin-left: 5%;
     margin-top: 2%;
     margin-top: 100px;
     min-height: 500px;
+}
+
+#crown-ic {
+    display: flex;
+    height: 10%;
+    width: 10%;
+    margin-top: 5.5%;
+    margin-left: auto;
+}
+
+.minitab {
+    margin: 20px auto;
+    width: 90%;
+    height: 50px;
+    border-radius: 10px;
+    background: rgb(82, 68, 204);
+    text-align: center;
+}
+
+.minitab h2 {
+    font-family: 'PromptNavbar', sans-serif;
+    font-weight: 200;
+    margin: 2.6% auto 2.6% 0;
+}
+
+.minitab:hover {
+    background-color: rgb(58, 137, 255);
+}
+
+.minitab-perfector {
+    display: flex;
+}
+
+.minitab img {
+    margin-left: auto;
+    margin-right: 1%;
+}
+
+.hourly-bound {
+    position: relative;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid black;
+}
+
+.hourly-topic {
+    position: inherit;
+    box-sizing: content-box;
+    margin-top: 5%;
+    display: flex;
+}
+
+.hourly-topic h2{
+    font-family: 'PromptNavbar', sans-serif;
+    background: -webkit-linear-gradient(0deg, #ff5494, #ff9870);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+    font-size: 1.75em;
+    display: flex;
+    margin: 5% auto 5% 1%;
+    padding: 0; 
 }
 
 .hourly-update {
@@ -232,67 +301,132 @@ li a:hover {
     min-height: 40%;
     border-radius: 20px;
     color: black;
-    background-color: white;
-
+    background: linear-gradient(90deg, #ffffff 95%, #e9e7e5 100%);
+    box-shadow: 4px 4px 16px #111111; 
 }
 
-
-.minitab {
-    margin: 0 auto;
-    margin-bottom: 20px;
-    width: 90%;
-    height: 50px;
-    border-radius: 10px;
-    background: rgb(82, 68, 204);
-}
-
-.minitab:hover {
-    background-color: aqua;
-}
-
-.status-column-row2 {
-    display: flex;
-    margin: 0 auto;
-    width: 90%;
-    min-height: 200px;
+/*  =============================================
+    Column 3 status section
+    ============================================  */
+.status-column2 {
+    flex: 20%;
+    margin-top: 100px;
+    min-height: 500px;
 }
 
 .daily-update {
-    flex: 40%;
-    width: 35%;
-    min-height: 40%;
-    margin-right: 1.5%;
+    min-height: 30%;
+    padding-bottom: 5%;
     border-radius: 10px;
     background: linear-gradient(45deg, #5b4fff 10%, rgb(130, 81, 225) 90%);
+    box-shadow: 4px 4px 16px #111111; 
 }
 
 .weekly-update {
-    flex: 40%;
-    margin-left: 1.55%;
-    width: 35%;
-    min-height: 40%;
+    min-height: 30%;
+    padding-bottom: 5%;
     border-radius: 10px;
     background: linear-gradient(45deg, rgb(130, 81, 225) 10%, rgb(178, 63, 255) 90%);
+    box-shadow: 4px 4px 16px #111111; 
 }
 
-.end {
-    margin-top: 50px;
-    height: 300px;
-    background-color: #4e0e8a;
+.water-mini-topic {
+    text-align: center;
+    padding-top: 5%;
+    margin-top: 7.5%;
+    margin-bottom: 1%;
+    font-size: 1.5em;
 }
-.water1{
-    width: 300px;
-    height: 300px;
-    background-position: left;
 
-
+.daily-lastest, .weekly-lastest {
+    margin-top: 0 0;
+    text-align: center;  
+    font-size: 0.75em;
+    margin-bottom: 5%;
 }
-.water2{
-    width: 300px;
-    height: 300px;
-    background-position: right;
 
+.daily-announce, .weekly-announce {
+    display: inline;
+     
+}
 
+#show-daily {
+    border-radius: 7.5px;
+    padding: 0 5px;
+    background-color: #581ec5;
+}
+
+#show-weekly {
+    border-radius: 7.5px;
+    padding: 0 5px;
+    background-color: #8215b4;
+}
+
+.fetch-row1 h3, .fetch-row2 h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.fetch-row1 {
+    margin: 0;
+    width: 100%;
+    min-height: 70px;
+    height: 30%;
+}
+
+.fetch-row2 {
+    margin: 0;
+    width: 100%;
+    min-height: 70px;
+    height: 30%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.column2-pic {
+    position: inherit;
+    padding: 0;
+    margin: 5% 0 5% 10%;
+    position: initial;
+    max-width: 50px;
+    max-height: 50px;
+    height: auto;
+    width: auto;
+    border-radius: 50%;
+    border: 4px solid #7998ff;
+}
+
+.column2-content h4 {
+    margin: 5% 0 5% 0;
+    padding: 0;
+}
+
+.column2-column {
+    display: flex;
+}
+
+.column2-content {
+    flex: 50%;
+    margin-left: 10%;
+}
+
+/*  =============================================
+    Fetch status section
+    ============================================  */
+.hourly-lastest {
+    margin-top: 5%;
+}
+
+.hourly-announce {
+    display: inline;
+    font-family: 'PromptNavbar', sans-serif;
+    font-weight: 200;
+    text-align: center;
+    background: -webkit-linear-gradient(0deg, #ff5494, #ff9870);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+    font-size: 1.5em;
+    padding-top: 5%;
 }
 
 .water{
@@ -300,32 +434,35 @@ li a:hover {
     margin: 3% 7%;
     font-style: bold;
 }
-.img-center{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 150px;
-    height: 150px;
 
-
-
+.water1 {
+    width: 100px;
+    height: 100px;
+    background-position: left;
+    border-radius: 50%;
+    border: 6px solid #ff8eaa;
 
 }
-
-
-
-
+.water2 {
+    width: 100px;
+    height: 100px;
+    background-position: right;
+    border-radius: 50%;
+    border: 6px solid #ff8eaa;
+}
 
 
 .row1 {
   display: flex;
+  padding-top: 40px;
+  /* color: white; */
+  color: rgb(50, 40, 77);
+  /* background: linear-gradient(to left, #525df1, #a56af1); */
 }
-
 
 .column1 {
     width: 100%;
-
-  padding: 5px;
+    padding: 5px;
 }
 
 /*  =============================================
@@ -449,4 +586,11 @@ li a:hover {
 	100% {
 		background-position: 100% 50%;
 	}
+}
+.hourly-update, .daily-update, .weekly-update {
+    transition: transform .25s;
+}
+
+.hourly-update:hover, .daily-update:hover, .weekly-update:hover {
+    transform: scale(1.0625);
 }

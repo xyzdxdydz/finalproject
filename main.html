@@ -56,7 +56,7 @@
                     <div class="pic-sec">
                         <img class="recommend" id="recpic" src="main-pic/water-slot1.webp" alt=""/>
                         <script src="randomize-pic.js" href></script>
-                        <h3>ถ้านึกไม่ออก ลองนี่ !</h3>
+                        <h3 class="recommend-message">ถ้านึกไม่ออก ลองนี่ !</h3>
                     </div>
                     <div class="desc">
                         <h4>พวกเราตระหนักถึงปัญหาเชื้อไวรัส COVID-19 ที่กำลังระบาดอยู่ ณ ขณะนี้ เราจึงขอร่วมเป็นส่วนหนึ่งในการป้องกันเชื้อโรค ขอความร่วมมือทุกท่านลดการสัมผัส ล้างมือบ่อย ๆ และสวมหน้ากากอนามัยตลอดเวลา </h4>
@@ -68,108 +68,99 @@
     
             <div class="status-column">
                 <div class="hourly-update" id="hourly">
-                    <h2 class="status-Arcticle">Top Trend รายชั่วโมง</h2><br>
-
-                    <div class="">
-
-                        <h2 id ="show-hourly" ></h2>
-
-
-
+                    <div class="hourly-bound">
+                        <div class="hourly-topic">
+                            <img class="status-Arcticle" id="crown-ic" src="main-pic/crown-icon.png">
+                            <h2 class="status-Arcticle">Top Trend รายชั่วโมง</h2>
+                        </div>
                     </div>
+                    
+                    <div class="hourly-lastest">
+                        <h3 class ="hourly-announce">ณ ชั่วโมงที่ผ่านมา : </h3>
+                        <h3 class ="hourly-announce" id ="show-hourly"></h3>
+                    </div>
+
                     <div class="row1">
                         <div class="column1">
-
-                            <img class="water1" src="main-pic/water1.jpg" alt=""/>
-                            <h2 class="water">water1</h2><br>
-
-
-                            <h2 id ="water1-hourly" ></h2>
+                            <img class="water1" src="main-pic/water-slot1.webp" alt=""/>
+                            <h2 class="water">water1</h2>
+                            <h2 id ="water1-hourly"></h2>
                         </div>
                         <div class="column1">
-
-                        <img class="water2" src="main-pic/8858998581498_e14-04-2020.webp" alt=""/>
-                            <h2 class="water">water2</h2><br>
-
-                        <h2 id ="water2-hourly" ></h2>
+                            <img class="water2" src="main-pic/water-slot2.jpg" alt=""/>
+                            <h2 class="water">water2</h2>
+                            <h2 id="water2-hourly"></h2>
                         </div>
-
-
-
-                        </div>
-
-
+                    </div>
                 </div>
+
                 <div class="minitab">
-                    <!-- <h2 id="prop-hourly">Top Trend รายชั่วโมง</h2> -->
-                </div>
-                
-                <div class="status-column-row2">
-                    <div class="daily-update" id="daily">
-                        <h2  class="water">สรุปผลรายวัน</h2><br>
-                        <div class="">
-                        <h2 class="water" id ="show-daily" ></h2>
-
-                        </div>
-                        <div class="">
-                            <div class="">
-                            <div class="img-center">
-                                <img class="img-center" src="main-pic/water1.jpg" alt=""/>
-
-                            </div>
-
-<!--                                <img class="img-center" src="main-pic/water1.jpg" alt=""/>-->
-
-                                <h2 class="water">water1</h2><br>
-
-
-                                <h2 class="water" id ="water1-daily" ></h2>
-                            </div>
-                            <div class="">
-
-                            <img class="img-center" src="main-pic/8858998581498_e14-04-2020.webp" alt=""/>
-                                <h2 class="water">water2</h2><br>
-
-                            <h2 class="water" id ="water2-daily" ></h2>
-                            </div>
-
-
-
-                        </div>
-
-                    </div>
-    
-                    <div class="weekly-update" id="weekly">
-                        <h2 class="water">สรุปผลรายสัปดาห์</h2><br>
-                        <div class="">
-                        <h2 class="water" id ="show-weekly" ></h2>
-
-                    </div>
-                         <div class="">
-                        <div class="">
-
-                            <img class="img-center" src="main-pic/water1.jpg" alt=""/>
-                            <h2 class="water">water1</h2><br>
-
-
-                            <h2 class="water" id ="water1-weekly" ></h2>
-                        </div>
-                        <div class="">
-
-                        <img class="img-center" src="main-pic/8858998581498_e14-04-2020.webp" alt=""/>
-                            <h2 class="water">water2</h2><br>
-
-                        <h2 class="water" id ="water2-weekly" ></h2>
-                        </div>
-
-
-
-                        </div>
-
+                    <div class="minitab-perfector">
+                        <img class="mini-arrange" src="main-pic/time-icon.svg">
+                        <h2 class="mini-arrange" id="current-time-announce"></h2>
                     </div>
                 </div>
             </div>
+
+            <div class="status-column2">
+                <div class="daily-update" id="daily">
+                    <h2 class="water-mini-topic">สรุปผลรายวัน</h2>
+                    <div class="daily-lastest">
+                        <h3 class ="daily-announce">เมื่อวานนี้ : </h3>
+                        <h3 class="daily-announce" id ="show-daily"></h3>
+                    </div>
+
+                    <div class="fetch-row1">
+                        <div class="column2-column">
+                            <img class="column2-pic" src="main-pic/water-slot1.webp" alt=""/>
+                            <div class="column2-content">
+                                <h4 >water1</h4>
+                                <h4 id ="water1-daily" ></h4>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="fetch-row2">
+                        <div class="column2-column">
+                            <img class="column2-pic" src="main-pic/water-slot2.jpg" alt=""/>
+                            <div class="column2-content">
+                                <h4 >water2</h4>
+                                <h4 id ="water2-daily" ></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="weekly-update" id="weekly">
+                    <h2 class="water-mini-topic">สรุปผลรายสัปดาห์</h2>
+                    <div class="weekly-lastest">
+                        <h3 class ="weekly-announce">สัปดาห์ก่อน : </h3>
+                        <h3 class="weekly-announce" id ="show-weekly" ></h3>
+                    </div>
+                    <div class="fetch-row1">
+                        <div class="column2-column">
+                            <img class="column2-pic" src="main-pic/water-slot1.webp" alt=""/>
+                            <div class="column2-content">
+                                <h4>water1</h4>
+                                <h4 id ="water1-weekly" ></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fetch-row2">
+                        <div class="column2-column">
+                            <img class="column2-pic" src="main-pic/water-slot2.jpg" alt=""/>
+                            <div class="column2-content">
+                                <h4 >water2</h4>
+                                <h4 id ="water2-weekly" ></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
+
         <script src="main-update.js" href></script>
     </div>
 
