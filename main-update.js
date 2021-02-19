@@ -6,21 +6,24 @@ function makeNewNode(text) {
 
 function getPopularData(id,water){
     let data = document.getElementById(`show-${id}`);
-    data.innerText = water.popularwater
+    data.innerText = water.popularwater;
+    communicator++;
     // prayut.innerText = water.result + "\n"+ "\n"+ "\n" + water.result
     //console.log(water)
 }
 
 function getWater1Data(id,water){
     let data = document.getElementById(`water1-${id}`);
-        data.innerText = water.water1
+        data.innerText = water.water1;
+        communicator++;
     //console.log(water)
     return water.water1;
 }
 
 function getWater2Data(id,water){
     let data = document.getElementById(`water2-${id}`);
-        data.innerText = water.water2
+        data.innerText = water.water2;
+        communicator++;
     //console.log(water)
     return water.water2;
 }
@@ -101,7 +104,9 @@ function loadData() {
 var time = whatHourIs();
 var count = [0, 0];
 var tmp = [0, 0];
+var communicator = 0;
 let updateMinitab = document.getElementById("current-time-announce");
+let statusicon = document.getElementById("setting-icon");
 
 setInterval(() => {
     var zarg = whatHourIs();
@@ -122,4 +127,12 @@ setInterval(() => {
     }
 
     updateMinitab.innerText = "สถานะ ณ เวลา " + time + ":00 - " + time + ":59";
+    if (communicator == 9) {
+        statusicon.style.animation = "circumstance 3s forwards linear infinite";
+    
+    } else {
+        statusicon.style.animation = "none";
+    }
+
+    communicator = 0;
 }, 5000);
