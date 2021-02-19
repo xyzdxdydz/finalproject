@@ -15,12 +15,19 @@ function getWater1Data(id,water){
     let data = document.getElementById(`water1-${id}`);
         data.innerText = water.water1
     //console.log(water)
+    return water.water1;
 }
 
 function getWater2Data(id,water){
     let data = document.getElementById(`water2-${id}`);
         data.innerText = water.water2
     //console.log(water)
+    return water.water2;
+}
+
+function whatHourIs() {
+    var d = new Date();
+    return d.getHours();
 }
 
 function loadData() {
@@ -36,15 +43,14 @@ function loadData() {
         headers: {"Content-Type": "application/json"},
     })
     .then((data) => data.json())
-    .then(data => getWater1Data("hourly",data));
+    .then(data => tmp[0] = getWater1Data("hourly",data));
 
     fetch("http://158.108.182.12:3000/popular?Type=hoursPopular", {
         method:"GET",
         headers: {"Content-Type": "application/json"},
-
     })
     .then((data) => data.json())
-    .then(data => getWater2Data("hourly",data));
+    .then(data => tmp[1] = getWater2Data("hourly",data));
 
     // By day
     fetch("http://158.108.182.12:3000/popular?Type=dayPopular", {
@@ -77,32 +83,43 @@ function loadData() {
     .then((data) => data.json())
     .then(data => getPopularData("weekly",data));
 
-     fetch("http://158.108.182.12:3000/popular?Type=weekPopular", {
-        method:"GET",
-        headers: {"Content-Type": "application/json"},
-    })
-    .then((data) => data.json())
-    .then(data => getWater2Data("weekly",data));
-
-      fetch("http://158.108.182.12:3000/popular?Type=weekPopular", {
+    fetch("http://158.108.182.12:3000/popular?Type=weekPopular", {
         method:"GET",
         headers: {"Content-Type": "application/json"},
     })
     .then((data) => data.json())
     .then(data => getWater1Data("weekly",data));
+
+    fetch("http://158.108.182.12:3000/popular?Type=weekPopular", {
+        method:"GET",
+        headers: {"Content-Type": "application/json"},
+    })
+    .then((data) => data.json())
+    .then(data => getWater2Data("weekly",data));
 }
 
-var d = new Date();
-var time = d.getHours();
+var time = whatHourIs();
 var count = [0, 0];
-var updateMinitab = document.getElementById("current-time-announce");
+var tmp = [0, 0];
+let updateMinitab = document.getElementById("current-time-announce");
 
 setInterval(() => {
-    if (d.getHours() != time) {
-        time = d.getHours();
-   }
+    var zarg = whatHourIs();
+    if (zarg != time) {
+        time = zarg;
+    }
+
     loadData();
-    updateMinitab.innerText = "สถานะ ณ เวลา " + time + ":00 - " + time + ":59";
-    // if ( || )
+
+    // if water was dispensed
+    console.log(tmp[0]);
+    console.log(tmp[1]);
     
+    if (count[0] != tmp[0] || count[1] != tmp[1]) {
+        count[0] = tmp[0];
+        count[1] = tmp[1];
+        randommize_recommend();
+    }
+
+    updateMinitab.innerText = "สถานะ ณ เวลา " + time + ":00 - " + time + ":59";
 }, 5000);

@@ -49,11 +49,10 @@ body {
     Intro-Animation
     ============================================  */
 #anim-key2 {
-    display: initial;
+    display: none;
 }
 
 .anim-key1 {
-    display: none;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -66,19 +65,16 @@ body {
 }
 
 .content {
-    display: none;
     position: relative;
     padding: 100px 40px;
 }
 
 .content .name-intro {
-    display: none;
     background: -webkit-linear-gradient(0deg, #ffffff, #ffffff, rgb(229, 100, 255), rgb(255, 153, 135));
     background-size: 400% 400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     
-
     font-family: 'PromptHeader', sans-serif;
     font-size: 2em;
     animation: fade 2s alternate, gen-gradient 2s ease 1s, fade 1s ease 4s reverse;
