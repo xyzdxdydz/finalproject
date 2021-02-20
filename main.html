@@ -31,7 +31,7 @@
                 <li><a href="contact.asp">ช่องทางติดต่อ</a></li>
                 <li><a href="about.asp">เกี่ยวกับ</a></li>
 
-                <li style="float:right" id="setting"><a><i class="material-icons md-48">settings</i></a></li>
+                <li style="float:right" id="setting"><a><i class="material-icons md-48">fact_check</i></a></li>
                 <li style="float:right" id="status"><i class="material-icons md-60" id="setting-icon">refresh</i></li>
               </ul>
         </div>
@@ -131,7 +131,6 @@
                     </div>
                 </div>
 
-
                 <div class="weekly-update" id="weekly">
                     <h2 class="water-mini-topic">สรุปผลรายสัปดาห์</h2>
                     <div class="weekly-lastest">
@@ -166,52 +165,35 @@
 
     <div class="modal" id="modal"> 
         <div  class="modal-content" id="modal-content">
-            <span class="close">&times;</span>
-
             <div class="modal-row">
                 <div class="modal1">
-                    <h2>Slot 1</h2>
-                    <div class="slot-name" id="slot1-name">
-                        <h3>Name: <h3>
-                    </div>
-
+                    <h2>water1</h2>
                     <div class="slot-pic" id="slot1-pic">
                         <img src="main-pic/water-slot1.webp" alt=""/>
                     </div>
-                    <div class="slot-gauge" id="slot1-gauge">
-
-                    </div>
-
-                    <div class="slot-upload" id="slot1-upload">
-                        <input class="btn" id="btn2" type="submit" value="Upload">
+                    <div class="slot1-gauge" id="slot1-gauge">
+                        <div id="gauge1-data">
+                            <h3 id="slot-percent-water1">0%</h3>
+                        </div>
                     </div>
                 </div>
-                <div class="modal2">
-                    <h2>Slot 2</h2>
-                    <div class="slot-name" id="slot2-name">
-                        <h3>Name: <h3>
-                    </div>
 
+                <div class="modal2">
+                    <h2>water2</h2>
                     <div class="slot-pic" id="slot2-pic">
                         <img src="main-pic/water-slot2.jpg" alt=""/>
-
                     </div>
-                    <div class="slot-gauge" id="slot2-gauge">
-
-                    </div>
-
-                    <div class="slot-upload" id="slot2-upload">
-                        <form action="main.html">
-                            <label for="img">Select image:</label>
-                            <input type="file" id="img" name="img" accept="image/*">
-                            <input type="submit">
-                          </form>
-                        <input class="btn" id="btn1" type="submit" value="Upload">
+                    <div class="slot2-gauge" id="slot2-gauge">
+                        <div id="gauge2-data">
+                            <h3 id="slot-percent-water2">0%</h3>
+                        </div>
                     </div>
 
                 </div>
             </div>
-            
+            <div class="close">
+                <h2>OK</h2>
+            </div>
         </div>
         <script src="setting-onClick.js" href></script>
     </div>

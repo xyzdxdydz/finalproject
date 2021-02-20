@@ -101,12 +101,72 @@ function loadData() {
     .then(data => getWater2Data("weekly",data));
 }
 
+function fetchpercent() {
+    fetch("http://158.108.182.12:3000/volume", {
+        method:"GET",
+        headers: {"Content-Type": "application/json"},
+    })
+    .then((data) => data.json())
+    .then(data => getPercent("water1", data));
+
+    fetch("http://158.108.182.12:3000/volume", {
+        method:"GET",
+        headers: {"Content-Type": "application/json"},
+    })
+    .then((data) => data.json())
+    .then(data => getPercent("water2", data));
+}
+
+function getPercent(id, data) {
+    let destination = document.getElementById(`slot-percent-${id}`);
+    var getnum;
+    var before = parseInt(destination.innerText, 10);
+    if (id == "water1") {
+        getnum = data.water1;
+        destination.innerText = "" + getnum + "%";
+        // slot1gauge.style.width = `${getnum}%`;
+        progressPercentage(slot1gauge, before, parseInt(getnum, 10));
+    }else {
+        getnum = data.water2;
+        destination.innerText = "" + getnum + "%";
+        // slot2gauge.style.width = `${getnum}%`;        
+        progressPercentage(slot2gauge, before, parseInt(getnum, 10));   
+    }
+    communicator++;
+}
+
+function progressPercentage(dest, fp, tp) {
+    let animprogress;
+    var itp = 0;
+    var end = 120;
+    var tmp = (tp-fp) / 120;
+    let tmp2;
+    animprogress = setInterval(frame, 16);
+    function frame() {
+        if (itp == end || fp == tp) {
+            clearInterval(animprogress);
+        } else {
+            itp++;
+            tmp2 = fp + itp*tmp;
+            dest.style.width = Math.floor(tmp2).toString() + "%";
+        }
+    }
+}
+
 var time = whatHourIs();
 var count = [0, 0];
 var tmp = [0, 0];
 var communicator = 0;
+
 let updateMinitab = document.getElementById("current-time-announce");
 let statusicon = document.getElementById("setting-icon");
+var slot1gauge;
+var slot1gauge;
+
+setTimeout(function() {
+    slot1gauge = document.getElementById("gauge1-data");
+    slot2gauge = document.getElementById("gauge2-data");
+}, 100);
 
 setInterval(() => {
     var zarg = whatHourIs();
@@ -115,6 +175,7 @@ setInterval(() => {
     }
 
     loadData();
+    fetchpercent();
 
     // if water was dispensed
     console.log(tmp[0]);
@@ -127,7 +188,7 @@ setInterval(() => {
     }
 
     updateMinitab.innerText = "สถานะ ณ เวลา " + time + ":00 - " + time + ":59";
-    if (communicator == 9) {
+    if (communicator == 11) {
         statusicon.style.animation = "circumstance 3s forwards linear infinite";
     
     } else {
@@ -136,3 +197,4 @@ setInterval(() => {
 
     communicator = 0;
 }, 5000);
+

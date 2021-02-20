@@ -12,6 +12,7 @@
 
 body {
     font-family: 'Prompt', sans-serif;
+    height: 100vh;
     font-weight: 300;
     color: white;
     margin: 0;
@@ -53,6 +54,7 @@ body {
 }
 
 .anim-key1 {
+    /* display: none; */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -65,11 +67,13 @@ body {
 }
 
 .content {
+    /* display: none; */
     position: relative;
     padding: 100px 40px;
 }
 
 .content .name-intro {
+    /* display: none; */
     background: -webkit-linear-gradient(0deg, #ffffff, #ffffff, rgb(229, 100, 255), rgb(255, 153, 135));
     background-size: 400% 400%;
     -webkit-background-clip: text;
@@ -483,33 +487,42 @@ li a:hover {
 }
 
 .modal-content {
-    background-color: #fefefe;
     margin: auto;
     padding: 0px 30px 30px 30px;
-    border: 1px solid #888;
-    width: 80%;
-    min-height: 75%;
+    width: 50%;
+    min-height: 90%;
 }
     
 .close {
+    display: flex;
+    width: 15%;
     padding: 0;
-    margin: 0;
-    color: #aaaaaa;
-    float: right;
-    font-size: 2em;
+    margin: auto;
+    color: #ffffff;
     font-weight: bold;
+    background: linear-gradient(rgb(255, 215, 105), rgb(255, 150, 108));
+    border-radius: 30px;
 }
     
 .close:hover,
 .close:focus {
-    color: #000;
     text-decoration: none;
     cursor: pointer;
 }
 
+.close:hover {
+    transition: transform .25s;
+}
+
+.close h2 {
+    margin: auto;
+    font-size: 2em;
+    text-align: center;
+}
+
 .modal-row {
     display: flex;
-    margin-top: 50px;
+    margin-top: 0px;
 }
 
 .modal-row h2 {
@@ -518,39 +531,70 @@ li a:hover {
 
 .modal1 {
     flex: 50%;
-    min-height: 100%;
-    min-width: 50%;
-    background-color: #000;
+    margin: 2.5%;
+    min-height: 450px;
+    width: 50%;
+    background: linear-gradient(to right bottom, rgb(82, 255, 174), rgb(41, 154, 199));
+    border-radius: 50px;
 }
 
 .modal2 {
     flex: 50%;
+    margin: 2.5%;
     min-height: 100%;
-    min-width: 50%;
-    background-color: #5b4fff;
-}
-
-.slot-name {
-    margin: 0 15%;
+    width: 50%;
+    background: linear-gradient(to right bottom, rgb(65, 221, 248), rgb(120, 105, 255));
+    border-radius: 50px;
 }
 
 .slot-pic img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 50%;
+    box-shadow: 10px 10px 0px #3168bb;
 }
 
-.slot-upload {
-    margin-top: 10%;
+#slot1-gauge {
+    margin: auto;
+    background-color: #ffffff;
+    width: 90%;
+    height: 30px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 8px #4b4b4b;
 }
 
-.btn {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 30px;
+#slot2-gauge {
+    margin: auto;
+    background-color: #ffffff;
+    width: 90%;
+    height: 30px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 8px #4b4b4b;
+}
+
+#gauge1-data {
+    text-align: center;
+    width: 0%;
+    height: 100%;
+    color: black;
+    background-color: #5dffce;
+    border-radius: 20px;
+}
+
+#gauge2-data {
+    text-align: center;
+    width: 0%;
+    height: 100%;
+    color: black;
+    background-color: rgb(77, 190, 255);
+    border-radius: 20px;
+}
+
+.close:hover {
+    transform: scale(1.125);
 }
 /*  =============================================
     KeyFrames animation section
@@ -587,6 +631,7 @@ li a:hover {
 		background-position: 100% 50%;
 	}
 }
+
 .hourly-update, .daily-update, .weekly-update {
     transition: transform .25s;
 }
@@ -594,3 +639,5 @@ li a:hover {
 .hourly-update:hover, .daily-update:hover, .weekly-update:hover {
     transform: scale(1.0625);
 }
+
+
