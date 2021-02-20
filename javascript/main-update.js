@@ -1,9 +1,4 @@
-function makeNewNode(text) {
-    newNode = document.createElement('p');
-    newNode.innerText = text;
-    return newNode;
-}
-
+// load usage of water dispenser 
 function getPopularData(id,water){
     let data = document.getElementById(`show-${id}`);
     data.innerText = water.popularwater;
@@ -28,11 +23,13 @@ function getWater2Data(id,water){
     return water.water2;
 }
 
+// ask f0r hour
 function whatHourIs() {
     var d = new Date();
     return d.getHours();
 }
 
+// fetch use counts
 function loadData() {
     fetch("http://158.108.182.12:3000/popular?Type=hoursPopular", {
         method:"GET",
@@ -101,6 +98,7 @@ function loadData() {
     .then(data => getWater2Data("weekly",data));
 }
 
+// fetch percent on tank
 function fetchpercent() {
     fetch("http://158.108.182.12:3000/volume", {
         method:"GET",
@@ -117,34 +115,42 @@ function fetchpercent() {
     .then(data => getPercent("water2", data));
 }
 
+// set percent and run animation
 function getPercent(id, data) {
     let destination = document.getElementById(`slot-percent-${id}`);
     var getnum;
     var before = parseInt(destination.innerText, 10);
+
     if (id == "water1") {
         getnum = data.water1;
         destination.innerText = "" + getnum + "%";
         // slot1gauge.style.width = `${getnum}%`;
         progressPercentage(slot1gauge, before, parseInt(getnum, 10));
+
     }else {
         getnum = data.water2;
         destination.innerText = "" + getnum + "%";
         // slot2gauge.style.width = `${getnum}%`;        
         progressPercentage(slot2gauge, before, parseInt(getnum, 10));   
     }
+
     communicator++;
 }
 
+// animation time fixed for 2s.
 function progressPercentage(dest, fp, tp) {
     let animprogress;
     var itp = 0;
     var end = 120;
     var tmp = (tp-fp) / 120;
     let tmp2;
+
     animprogress = setInterval(frame, 16);
+
     function frame() {
         if (itp == end || fp == tp) {
             clearInterval(animprogress);
+
         } else {
             itp++;
             tmp2 = fp + itp*tmp;
@@ -153,16 +159,19 @@ function progressPercentage(dest, fp, tp) {
     }
 }
 
+// check variable for hour, have usage in 5 sec and sucess fetch
 var time = whatHourIs();
 var count = [0, 0];
 var tmp = [0, 0];
 var communicator = 0;
 
+// stat update
 let updateMinitab = document.getElementById("current-time-announce");
 let statusicon = document.getElementById("setting-icon");
 var slot1gauge;
 var slot1gauge;
 
+// main, run every 5s
 setTimeout(function() {
     slot1gauge = document.getElementById("gauge1-data");
     slot2gauge = document.getElementById("gauge2-data");
@@ -174,20 +183,24 @@ setInterval(() => {
         time = zarg;
     }
 
+    // fetch
     loadData();
     fetchpercent();
 
-    // if water was dispensed
     // console.log(tmp[0]);
     // console.log(tmp[1]);
-    
+
+    // if water was dispensed in 5s
     if (count[0] != tmp[0] || count[1] != tmp[1]) {
         count[0] = tmp[0];
         count[1] = tmp[1];
         randommize_recommend();
     }
 
+    // show time @ minitab
     updateMinitab.innerText = "สถานะ ณ เวลา " + time + ":00 - " + time + ":59";
+
+    //check if no problem while fetch and display spin at status icon
     if (communicator == 11) {
         statusicon.style.animation = "circumstance 5s forwards linear infinite";
     
@@ -197,4 +210,3 @@ setInterval(() => {
 
     communicator = 0;
 }, 5000);
-

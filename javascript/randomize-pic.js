@@ -10,4 +10,5 @@ function randommize_recommend() {
     // console.log(num);
 }
 
+// random between pic1 or pic2
 randommize_recommend();
