@@ -7,7 +7,7 @@ function randommize_recommend() {
     } else {
         destination.setAttribute("src", "main-pic/water-slot2.jpg");
     }
-    console.log(num);
+    // console.log(num);
 }
 
 randommize_recommend();

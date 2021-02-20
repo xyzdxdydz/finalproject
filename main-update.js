@@ -148,7 +148,7 @@ function progressPercentage(dest, fp, tp) {
         } else {
             itp++;
             tmp2 = fp + itp*tmp;
-            dest.style.width = Math.floor(tmp2).toString() + "%";
+            dest.style.width = tmp2.toString() + "%";
         }
     }
 }
@@ -178,8 +178,8 @@ setInterval(() => {
     fetchpercent();
 
     // if water was dispensed
-    console.log(tmp[0]);
-    console.log(tmp[1]);
+    // console.log(tmp[0]);
+    // console.log(tmp[1]);
     
     if (count[0] != tmp[0] || count[1] != tmp[1]) {
         count[0] = tmp[0];
@@ -189,7 +189,7 @@ setInterval(() => {
 
     updateMinitab.innerText = "สถานะ ณ เวลา " + time + ":00 - " + time + ":59";
     if (communicator == 11) {
-        statusicon.style.animation = "circumstance 3s forwards linear infinite";
+        statusicon.style.animation = "circumstance 5s forwards linear infinite";
     
     } else {
         statusicon.style.animation = "none";
