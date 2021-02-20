@@ -28,8 +28,8 @@
             <ul>
                 <li><a href="main.html">หน้าหลัก</a></li>
                 <li><a href="https://ddc.moph.go.th/viralpneumonia/index.php">กรมควบคุมโรค</a></li>
-                <li><a href="contact.asp">ช่องทางติดต่อ</a></li>
-                <li><a href="about.asp">เกี่ยวกับ</a></li>
+                <li id="button-contact"><a>ช่องทางติดต่อ</a></li>
+                <li id="button-about"><a>เกี่ยวกับ</a></li>
 
                 <li style="float:right" id="setting"><a><i class="material-icons md-48">fact_check</i></a></li>
                 <li style="float:right" id="status"><i class="material-icons md-60" id="setting-icon">refresh</i></li>
@@ -170,14 +170,14 @@
 
     <div class="modal" id="modal"> 
         <div  class="modal-content" id="modal-content">
-            <h2 class="modal-topic">ตอนนี้นำเหลือเท่าไหร่แล้วนะ...</h2>
+            <h2 class="modal-topic">ตอนนี้น้ำเหลือเท่าไหร่แล้วนะ...</h2>
             <div class="modal-row">
                 <div class="modal1">
                     <h2>water1</h2>
                     <div class="slot-pic" id="slot1-pic">
                         <img src="main-pic/water-slot1.webp" alt=""/>
                     </div>
-                    <h3>เหลือ : </h3>
+                    <h3 class="pc-left">เหลือ : </h3>
                     <div class="slot1-gauge" id="slot1-gauge">
                         <div id="gauge1-data">
                             <h3 id="slot-percent-water1">0%</h3>
@@ -190,7 +190,7 @@
                     <div class="slot-pic" id="slot2-pic">
                         <img src="main-pic/water-slot2.jpg" alt=""/>
                     </div>
-                    <h3>เหลือ : </h3>
+                    <h3 class="pc-left">เหลือ : </h3>
                     <div class="slot2-gauge" id="slot2-gauge">
                         <div id="gauge2-data">
                             <h3 id="slot-percent-water2">0%</h3>
@@ -199,12 +199,24 @@
 
                 </div>
             </div>
-            <div class="close">
+            <div class="close" id="close-setting">
                 <h2>OK</h2>
             </div>
         </div>
-        <script src="setting-onClick.js" href></script>
     </div>
+
+    <div class="modal-about" id="modal-about">
+        <div class="modal-about-content border-gradient" id="modal-about-content">
+            <h1>About</h1>
+            <img src="main-pic/about-troll.jpg">
+            <h2 id="iu">ขอ UI ได้ IU</h2>
+
+            <div class="close" id="close-about">
+                <h2>OK</h2>
+            </div>
+        </div>
+    </div>
+    <script src="setting-onClick.js" href></script>
 </body>
 <footer>
     <!-- <div class="end"></div> -->
